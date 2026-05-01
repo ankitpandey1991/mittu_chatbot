@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mittu_Bot</title>
+  <link rel="icon" href="imgs/mittu-bot-icon.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Chat Toggle Button -->
+  <div id="chat-toggle" onclick="toggleChat()">
+    <img src="imgs/mittu-bot-icon.png" style="width: 32px; height:32px;" alt="ChatBot Icon" class="chat-icon" />
+  </div>
+
+  <!-- Chat Window -->
+  <div id="chat-container" class="hidden">    
+    <!-- Header -->
+    <div class="chat-header">
+      <div class="bot-info">
+        <div class="bot-avatar"><img src="imgs/mittu-bot-icon.png" style="width: 32px; height:32px;" alt="ChatBot Icon" class="chat-icon" /></div>
+        <div>
+          <h3>ChatBot</h3>
+          <p class="status">Online</p>
+        </div>
+      </div>
+      <button class="close-btn" onclick="toggleChat()">✕</button>
+    </div>
+
+    <!-- Messages Area -->
+    <div id="chat-box">
+      <!-- Welcome message -->
+      <div class="message bot-message">
+        <div class="bot-avatar-small">
+            <img src="imgs/mittu-bot-icon.png" style="width: 20px; height:20px;" alt="ChatBot Icon" class="chat-icon" />
+        </div>
+        <div class="bubble">
+          <p>Hello! I'm Mittu😊 Your friendly chatbot.</p>
+          <p>Ask me anything or type <strong>"Help Me"</strong> to see what I can do!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Reply Suggestions -->
+    <div id="suggestions">
+      <button onclick="sendSuggestion('Hello')">👋 Hello</button>
+      <button onclick="sendSuggestion('Help Me')">❓ Help Me</button>
+      <button onclick="sendSuggestion('Joke')">😄 Joke</button>
+      <button onclick="sendSuggestion('Time')">🕐 Time</button>
+      <button onclick="sendSuggestion('Date')">📅 Date</button>
+      <button onclick="sendSuggestion('Poems')">📖 Poems</button>
+    </div>
+
+    <!-- Input Area -->
+    <div class="chat-input-area">
+      <input 
+        type="text" 
+        id="user-input" 
+        placeholder="Type a message..." 
+        autocomplete="off"
+      />
+      <button id="send-btn" onclick="sendMessage()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" 
+             viewBox="0 0 24 24" fill="white">
+          <path d="M2 21l21-9L2 3v7l15 2-15 2z"/>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
